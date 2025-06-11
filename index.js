@@ -311,6 +311,11 @@ const checkNotifications = async () => {
   }
 };
 
+app.get('/check-notifications', async (req, res) => {
+  await checkNotifications();
+  res.json({ status: 'Notifications checked' });
+});
+
 // Send Expo Push Notifications
 const sendPushNotifications = async (notification) => {
   let messages = [];
@@ -356,7 +361,7 @@ const sendPushNotifications = async (notification) => {
 };
 
 // Start Polling every 10 seconds
-setInterval(checkNotifications, 16000);
+// setInterval(checkNotifications, 26000);
 
 app.get('/', (req, res) => {
   res.json({ status: 'OK', message: 'Notification service is running' });
