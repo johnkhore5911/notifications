@@ -356,7 +356,7 @@ const sendPushNotifications = async (notification) => {
 };
 
 // Start Polling every 10 seconds
-setInterval(checkNotifications, 10000);
+setInterval(checkNotifications, 15000);
 
 app.get('/', (req, res) => {
   res.json({ status: 'OK', message: 'Notification service is running' });
